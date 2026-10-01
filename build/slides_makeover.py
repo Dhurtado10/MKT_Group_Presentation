@@ -11,17 +11,17 @@ def pagenum_white(s,pid):
 s=sl[1]; clear(s,{3,4,24})
 band=s.shapes.add_picture(pattern_crop(10,1.3,fade=0.72,cx=0.55,cy=0.5,name="s2_band.jpg"),0,0,Inches(10),Inches(1.3)); to_back(s,band)
 # row A: the shortlist
-small_caps(s,0.5,1.47,5,"What we found in all six groups")
+small_caps(s,0.5,1.47,5,"The borrower's shortlist: 2 to 4 lenders")
 for i in range(4):
     x=0.5+i*1.22
     rrect(s,x,1.75,1.1,0.78,fill=NAVY,r=0.18)
-    text(s,x,1.75,1.1,0.78,[[("Lender","Calibri",10,"AFC0DA",False)],[("they knew","Calibri",10,"AFC0DA",False)]],anchor=MSO_ANCHOR.MIDDLE,align=CW)
-text(s,0.5,2.58,4.8,0.25,[[("Two to four lenders compared. The list was built before any rate was seen.","Calibri",10,GREY,False)]])
+    text(s,x,1.75,1.1,0.78,[[("Familiar","Calibri",10.5,"FFFFFF",True)],[("lender","Calibri",10.5,"FFFFFF",True)]],anchor=MSO_ANCHOR.MIDDLE,align=CW)
+text(s,0.5,2.58,4.8,0.25,[[("Found in all six groups: borrowers compared only lenders they already knew.","Calibri",10,GREY,False)]])
 # AMB slot (dashed, leaf mark)
 rrect(s,5.55,1.75,1.55,0.78,fill="FFFFFF",line=LEAF,lw=1.5,r=0.18,dash=True)
 s.shapes.add_picture(BR+"amb_leaves_transparent.png",Inches(5.62),Inches(1.8),Inches(0.95),Inches(0.55))
-text(s,6.5,1.75,0.6,0.78,[[("AMB","Calibri",11,GREEN,True)],[("absent","Calibri",9.5,GREY,False)]],anchor=MSO_ANCHOR.MIDDLE)
-text(s,5.55,2.58,1.6,0.25,[[("Never among them","Calibri",10,GREEN,True)]])
+text(s,6.5,1.75,0.6,0.78,[[("AMB","Calibri",11,GREEN,True)],[("not on list","Calibri",9,GREY,False)]],anchor=MSO_ANCHOR.MIDDLE)
+text(s,5.55,2.58,1.6,0.25,[[("Never considered","Calibri",10,GREEN,True)]])
 # strengths vs presence
 line(s,7.4,1.55,7.4,2.8,RULE,1)
 text(s,7.6,1.5,1.9,0.5,[[("5.94%","Cambria",24,GREEN,True)]])
