@@ -11,12 +11,16 @@ def pagenum_white(s,pid):
 s=sl[1]; clear(s,{3,4,24})
 band=s.shapes.add_picture(pattern_crop(10,1.3,fade=0.72,cx=0.55,cy=0.5,name="s2_band.jpg"),0,0,Inches(10),Inches(1.3)); to_back(s,band)
 # row A: the shortlist
-small_caps(s,0.5,1.47,5,"The borrower's shortlist: 2 to 4 lenders")
+small_caps(s,0.5,1.47,5,"What a borrower's shortlist looked like")
 for i in range(4):
     x=0.5+i*1.22
-    rrect(s,x,1.75,1.1,0.78,fill=NAVY,r=0.18)
-    text(s,x,1.75,1.1,0.78,[[("Familiar","Calibri",10.5,"FFFFFF",True)],[("lender","Calibri",10.5,"FFFFFF",True)]],anchor=MSO_ANCHOR.MIDDLE,align=CW)
-text(s,0.5,2.58,4.8,0.25,[[("Found in all six groups: borrowers compared only lenders they already knew.","Calibri",10,GREY,False)]])
+    if i<3:
+        rrect(s,x,1.75,1.1,0.78,fill=NAVY,r=0.18)
+        text(s,x,1.75,1.1,0.78,[[("Familiar","Calibri",10.5,"FFFFFF",True)],[("lender %d"%(i+1),"Calibri",10.5,"FFFFFF",True)]],anchor=MSO_ANCHOR.MIDDLE,align=CW)
+    else:
+        rrect(s,x,1.75,1.1,0.78,fill="F1F4F9",line="8A94A6",lw=1,r=0.18,dash=True)
+        text(s,x,1.75,1.1,0.78,[[("Lender 4","Calibri",10.5,GREY,True)],[("(sometimes)","Calibri",9.5,GREY,False)]],anchor=MSO_ANCHOR.MIDDLE,align=CW)
+text(s,0.5,2.58,4.8,0.25,[[("All six groups compared two to four lenders, all names they already knew.","Calibri",10,GREY,False)]])
 # AMB slot (dashed, leaf mark)
 rrect(s,5.55,1.75,1.55,0.78,fill="FFFFFF",line=LEAF,lw=1.5,r=0.18,dash=True)
 s.shapes.add_picture(BR+"amb_leaves_transparent.png",Inches(5.62),Inches(1.8),Inches(0.95),Inches(0.55))
