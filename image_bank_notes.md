@@ -47,6 +47,7 @@ Used since the notes above (build scripts in build/, run build/run.sh to regener
 - pg4-001, pg4-005, pg4-002 (small 258x141 originals): slide 11 medallions (20%, 55%, 15%), circle sizes scaled to budget share.
 - pg1-000: slide 2 right-bleed strip. pg89-000: slide 3 "issue" card. pg34-000: slide 5 photo behind white stat card.
 - pg18-000: slide 8 card header. pg10-000: slide 9 banner (shows a Ray White sign, consider swapping).
+- Slide 4 redone in report-highlights style (pg5-000 tall photo right, pg23, pg13, pg27 rows).
 - Slides 10, 12, 13 are photo-free (hairlines, accent rule, edge-bleed panel).
 - pg21-001 is a greyscale mask, not a photo. Do not use.
 - Still untouched: pg2, pg5, pg15, pg17-001/002/003, pg19, pg21-000, pg35, pg40, pg90, pg4-003/004, pg7.

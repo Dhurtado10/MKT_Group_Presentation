@@ -74,4 +74,25 @@ geom(s,15,w=3.25,h=4.225)
 shp(s,15)._element.spPr.find('{http://schemas.openxmlformats.org/drawingml/2006/main}prstGeom').set('prst','rect')
 geom(s,19,w=5.9)
 set_color(shp(s,20),"FFFFFF")
+
+# ---- S4: report-style highlights page: title with accent bar, three photo+stat rows, tall photo right
+s=sl[3]
+descs=[(shp(s,i).text_frame.paragraphs[0].text,shp(s,i).text_frame.paragraphs[1].text) for i in (27,31,35)]
+nums=[shp(s,i).text_frame.text for i in (26,30,34)]
+clear(s,{3,4,23,24})
+geom(s,4,x=0.72,y=0.52,w=5.75,h=1.0); scale_font(shp(s,4),0.95)
+rect(s,0.5,0.54,0.05,0.92,fill=LEAF)
+geom(s,23,w=6.0,y=5.0)
+tall=crop(P+"pg5-000.png",3.15/5.175,0.5,0.5)
+s.shapes.add_picture(save(tall,"s4_pg5.jpg"),Inches(6.85),Inches(0.45),Inches(3.15),Inches(5.175))
+rows=[("pg23-000.png",0.7,0.4),("pg13-000.png",0.5,0.5),("pg27-000.png",0.5,0.5)]
+RH=1.0
+for k,(ph,cx,cy) in enumerate(rows):
+    y=1.65+k*(RH+0.1)
+    s.shapes.add_picture(save(crop(P+ph,1.55/RH,cx,cy),"s4_row%d.jpg"%k),Inches(0.5),Inches(y),Inches(1.55),Inches(RH))
+    rect(s,2.05,y,4.5,RH,fill="EEF1F6")
+    text(s,2.2,y,0.85,RH,[[(nums[k],"Cambria",34,NAVY,True)]],anchor=MSO_ANCHOR.MIDDLE,align=PP_ALIGN.CENTER)
+    text(s,3.1,y,3.35,RH,[[(descs[k][0],"Calibri",12,GREEN,True)],{"runs":[(descs[k][1],"Calibri",9.5,GREY,False)],"space":2}],anchor=MSO_ANCHOR.MIDDLE)
+set_color(shp(s,24),"FFFFFF")
+s.shapes._spTree.append(shp(s,24)._element)
 prs.save(F)
