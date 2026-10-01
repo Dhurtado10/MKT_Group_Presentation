@@ -40,3 +40,13 @@ pg7-000, pg7-001
   the authentic logo, not a redrawn approximation.
 - white_logo.png — the original white reversed logo already in the source deck.
   Use on DARK/navy backgrounds.
+
+## Update: slides 2, 3, 5, 7, 8, 9, 10, 11, 12, 13
+Used since the notes above (build scripts in build/, run build/run.sh to regenerate):
+- pg16-000: slide 7 left photo (DIY). pg9-000: slide 7 right photo (broker). Navy lower-third ramp baked in.
+- pg4-001, pg4-005, pg4-002 (small 258x141 originals): slide 11 medallions (20%, 55%, 15%), circle sizes scaled to budget share.
+- pg1-000: slide 2 right-bleed strip. pg89-000: slide 3 "issue" card. pg34-000: slide 5 photo behind white stat card.
+- pg18-000: slide 8 card header. pg10-000: slide 9 banner (shows a Ray White sign, consider swapping).
+- Slides 10, 12, 13 are photo-free (hairlines, accent rule, edge-bleed panel).
+- pg21-001 is a greyscale mask, not a photo. Do not use.
+- Still untouched: pg2, pg5, pg15, pg17-001/002/003, pg19, pg21-000, pg35, pg40, pg90, pg4-003/004, pg7.
