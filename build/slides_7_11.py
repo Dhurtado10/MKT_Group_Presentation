@@ -8,7 +8,7 @@ P="photos/"
 s=prs.slides[6]
 clear(s,{3,4,25})
 cards=[
- dict(x=0.5, photo="pg16-000.png", cx=0.52, cy=0.45, tag="PRIORITY 1", name="DIY online borrowers",
+ dict(x=0.5, photo="pg13-000.png", cx=0.5, cy=0.5, tag="PRIORITY 1", name="DIY online borrowers",
       body="Build their own shortlist in search, comparison sites and AI tools, the channels a digital budget touches directly. Refinancers and upgraders behave the same way once a trigger fires.",
       job="Confirm a better deal is safe before committing"),
  dict(x=5.1, photo="pg9-000.png", cx=0.5, cy=0.5, tag="PRIORITY 2", name="Broker-placed borrowers",

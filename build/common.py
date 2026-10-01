@@ -102,3 +102,39 @@ def set_color(shape,hexv):
 
 def nofill(shape):
     shape.fill.background()
+
+# ---------- makeover helpers
+from pptx.enum.dml import MSO_LINE
+from pptx.enum.shapes import MSO_CONNECTOR
+from lxml import etree
+A='{http://schemas.openxmlformats.org/drawingml/2006/main}'
+BR="branding/"
+
+def alpha(shape,pct):
+    clr=shape._element.spPr.find('.//'+A+'solidFill/'+A+'srgbClr')
+    e=etree.SubElement(clr,A+'alpha'); e.set('val',str(int(pct*1000)))
+
+def rrect(slide,x,y,w,h,fill=None,line=None,lw=0.75,r=0.2,shape=MSO_SHAPE.ROUNDED_RECTANGLE,dash=False):
+    s=rect(slide,x,y,w,h,fill,line,lw,shape)
+    try: s.adjustments[0]=r
+    except Exception: pass
+    if dash and line: s.line.dash_style=MSO_LINE.DASH
+    return s
+
+def line(slide,x1,y1,x2,y2,color=RULE,w=1.0,dash=False):
+    c=slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,Inches(x1),Inches(y1),Inches(x2),Inches(y2))
+    c.line.color.rgb=rgb(color); c.line.width=Pt(w)
+    if dash: c.line.dash_style=MSO_LINE.DASH
+    return c
+
+def pattern_crop(w,h,fade=0.0,cx=0.5,cy=0.5,zoom=1.0,name="pat.jpg"):
+    im=crop(BR+"amb_leaf_pattern.png",w/h,cx,cy,zoom)
+    if fade>0:
+        white=Image.new("RGB",im.size,(255,255,255)); im=Image.blend(im,white,fade)
+    return save(im,name,minw=int(w*200))
+
+def to_back(slide,shape):
+    tree=slide.shapes._spTree; tree.remove(shape._element); tree.insert(2,shape._element)
+
+def small_caps(slide,x,y,w,txt,color=GREEN,size=9.5,align=PP_ALIGN.LEFT):
+    return text(slide,x,y,w,0.22,[[(txt.upper(),"Calibri",size,color,True)]],align=align)

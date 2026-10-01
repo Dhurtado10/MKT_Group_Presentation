@@ -85,7 +85,7 @@ rect(s,0.5,0.54,0.05,0.92,fill=LEAF)
 geom(s,23,w=6.0,y=5.0)
 tall=crop(P+"pg5-000.png",3.15/5.175,0.5,0.5)
 s.shapes.add_picture(save(tall,"s4_pg5.jpg"),Inches(6.85),Inches(0.45),Inches(3.15),Inches(5.175))
-rows=[("pg23-000.png",0.7,0.4),("pg13-000.png",0.5,0.5),("pg27-000.png",0.5,0.5)]
+rows=[("pg23-000.png",0.7,0.4),("pg4-003.png",0.5,0.5),("pg27-000.png",0.5,0.5)]
 RH=1.0
 for k,(ph,cx,cy) in enumerate(rows):
     y=1.65+k*(RH+0.1)

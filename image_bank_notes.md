@@ -51,3 +51,9 @@ Used since the notes above (build scripts in build/, run build/run.sh to regener
 - Slides 10, 12, 13 are photo-free (hairlines, accent rule, edge-bleed panel).
 - pg21-001 is a greyscale mask, not a photo. Do not use.
 - Still untouched: pg2, pg5, pg15, pg17-001/002/003, pg19, pg21-000, pg35, pg40, pg90, pg4-003/004, pg7.
+
+## Update: makeover of slides 2, 6, 8, 9, 10, 11, 12, 13
+- branding/ holds the three AMB files supplied by the user plus derived transparent versions (leaves, white logo, white mark, faint mark).
+- Slide 2: leaf-pattern header band. Slide 8: pattern behind the two stats. Slide 9: faded pattern background, white logo on navy ribbon. Slide 10: white mark on ribbon. Slide 13: faint white mark watermark on the ROI panel.
+- Slide 7 DIY photo is now pg13-000 (so slide 4 row 2 now uses pg4-003). pg16-000 is free again.
+- Outbound requests to image sites are blocked in this sandbox, so no new images were downloaded.
